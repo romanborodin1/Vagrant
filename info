@@ -1,0 +1,21 @@
+# INFO:  https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
+
+# Create the project directory and switch to it with:
+mkdir ~/my-first-vagrant-project
+cd ~/my-first-vagrant-project
+
+# In this example, we will use the centos/7 box. 
+# Run the following command to initialize a new Vagrantfile:
+vagrant init centos/7
+
+# To create and configure the virtual machine as specified in the Vagrantfile:
+vagrant up
+
+# To ssh into the virtual machine, run:
+vagrant ssh
+
+# You can stop the virtual machine with the following command:
+vagrant halt
+
+# Reload the VM
+vagrant reload
