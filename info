@@ -14,8 +14,23 @@ vagrant up
 # To ssh into the virtual machine, run:
 vagrant ssh
 
-# You can stop the virtual machine with the following command:
+# TO shutdown the virtual machine with the following command:
 vagrant halt
 
 # Reload the VM
 vagrant reload
+
+# To delete the VM described in the Vagrantfile:
+vagrant destroy
+
+# To send the VM to sleep:
+vagrant suspend
+
+# To wake the VM from sleep:
+vagrant resume
+
+# This command can be run in any directory. And it will return the list of machines along with the state and the directory where the Vagrantfile is located.
+vagrant global-status
+
+# To show the list of forwarded tcp ports
+vagrant port
