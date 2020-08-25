@@ -4,7 +4,6 @@
 # Create a new variable mach_quant - the quantity of vortual machines:
 $mach_quant = 3
 
-
 Vagrant.configure("2") do |config|
 
     config.vm.provider "virtualbox" do |vb|
@@ -20,17 +19,7 @@ Vagrant.configure("2") do |config|
         config.vm.define "node#{i}" do |node|
             node.vm.network "public_network", bridge: "wlp3s0", ip: "172.24.113.#{11+i}"
             node.vm.hostname = "node#{i}"
-
-           # # default router
-           # config.vm.provision "shell",
-           #     run: "always",
-           #     inline: "ip route add default via 172.24.113.1 dev eth2"
-
-           # # delete default gw on eth0
-           # config.vm.provision "shell",
-           #     run: "always",
-           #     inline: "sudo -i; eval $(ip route show default | awk '{ if ($5 ==\"eth0\") print \"ip route del default dev \" $5; }')"
-
+            config.vm.provision "shell", path: "script.sh"
         end
     end
 
